@@ -1,5 +1,6 @@
 {
 	"name": "svelte-starter",
+	"publisher": "thorcc",
 	"displayName": "svelte-starter",
 	"description": "",
 	"version": "0.0.1",
