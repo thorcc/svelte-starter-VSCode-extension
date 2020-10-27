@@ -2,7 +2,9 @@
 
 Extension for running svelte from the explorer menu.
 
-![alt text](image.png)
+<p>
+  <img src="https://raw.githubusercontent.com/thorcc/svelte-starter-VSCode-extension/main/image.png" alt="logo" width="300">
+</p>
 
 ## Requirements
 
