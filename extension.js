@@ -16,25 +16,27 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let createSvelte = vscode.commands.registerCommand('svelte-starter.createSvelte', function () {
+	let createSvelte = vscode.commands.registerCommand('svelte-starter.createSvelte', function (uri) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Svelte starting');
 		const terminal = vscode.window.createTerminal("svelte-terminal");
 		terminal.show();
+		terminal.sendText(`cd ${uri.fsPath}`);
 		terminal.sendText("npx degit sveltejs/template .");
 		terminal.sendText("npm install");
 		terminal.sendText("npm run dev");
 	});
 
-	let runSvelte = vscode.commands.registerCommand('svelte-starter.runSvelte', function () {
+	let runSvelte = vscode.commands.registerCommand('svelte-starter.runSvelte', function (uri) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Svelte starting');
 		const terminal = vscode.window.createTerminal("svelte-terminal");
 		terminal.show();
+		terminal.sendText(`cd ${uri.fsPath}`);
 		terminal.sendText("npm run dev");
 	});
 
