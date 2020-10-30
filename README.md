@@ -26,3 +26,11 @@ npm run dev
 ```
 npm run dev
 ```
+
+## build svelte
+
+```
+npm build
+```
+
+This function also adds a `./` to paths in index.html, enabling the app to run directly from `index.html` with out a webserver.
