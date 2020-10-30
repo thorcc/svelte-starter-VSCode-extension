@@ -40,6 +40,36 @@ function activate(context) {
 		terminal.sendText("npm run dev");
 	});
 
+	let buildSvelte = vscode.commands.registerCommand('svelte-starter.buildSvelte', function (uri) {
+		// The code you place here will be executed every time your command is executed
+
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Svelte starting');
+		const terminal = vscode.window.createTerminal("svelte-terminal");
+		terminal.show();
+		terminal.sendText(`cd "${uri.fsPath}"`);
+		terminal.sendText("npm run build");
+		(async ()=> {
+			const indexPath = `${uri.fsPath}/public/index.html`;
+			const indexHTML = await vscode.workspace.openTextDocument(indexPath);
+			let text = indexHTML.getText();
+			const hrefRegex = /href='\//gi;
+			const srcRegex = /src='\//gi;
+			text = text.replace(hrefRegex, "href='./");
+			text = text.replace(srcRegex, "src='./")
+			const workspaceEdit = new vscode.WorkspaceEdit()
+			workspaceEdit.replace(
+				vscode.Uri.file(indexPath), 
+				new vscode.Range(
+					indexHTML.positionAt(0),
+    				indexHTML.positionAt(text.length - 1)
+					), 
+				text
+				)
+			vscode.workspace.applyEdit(workspaceEdit);
+		})();
+	});
+
 	context.subscriptions.push(createSvelte);
 	context.subscriptions.push(runSvelte);
 }
