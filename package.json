@@ -16,6 +16,7 @@
 	],
 	"activationEvents": [
 		"onCommand:svelte-starter.createSvelte",
+		"onCommand:svelte-starter.createSapper",
 		"onCommand:svelte-starter.runSvelte",
 		"onCommand:svelte-starter.buildSvelte"
 	],
@@ -35,6 +36,10 @@
 				"title": "create svelte"
 			},
 			{
+				"command": "svelte-starter.createSapper",
+				"title": "create sapper"
+			},
+			{
 				"command": "svelte-starter.buildSvelte",
 				"title": "build svelte"
 			}
@@ -51,6 +56,10 @@
 				},
 				{
 					"command": "svelte-starter.buildSvelte",
+					"group": "SvelteGroup@1"
+				},
+				{
+					"command": "svelte-starter.createSapper",
 					"group": "SvelteGroup@1"
 				}
 			]
