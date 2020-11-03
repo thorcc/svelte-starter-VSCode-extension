@@ -29,6 +29,19 @@ function activate(context) {
 		terminal.sendText("npm run dev");
 	});
 
+	let createSapper = vscode.commands.registerCommand('svelte-starter.createSapper', function (uri) {
+		// The code you place here will be executed every time your command is executed
+
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Svelte starting');
+		const terminal = vscode.window.createTerminal("svelte-terminal");
+		terminal.show();
+		terminal.sendText(`cd ${uri.fsPath}`);
+		terminal.sendText("npx degit sveltejs/sapper-template#rollup .");
+		terminal.sendText("npm install");
+		terminal.sendText("npm run dev");
+	});
+
 	let runSvelte = vscode.commands.registerCommand('svelte-starter.runSvelte', function (uri) {
 		// The code you place here will be executed every time your command is executed
 
@@ -41,6 +54,7 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(createSvelte);
+	context.subscriptions.push(createSapper);
 	context.subscriptions.push(runSvelte);
 }
 exports.activate = activate;

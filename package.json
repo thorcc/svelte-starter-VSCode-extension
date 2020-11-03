@@ -16,6 +16,7 @@
 	],
 	"activationEvents": [
 		"onCommand:svelte-starter.createSvelte",
+		"onCommand:svelte-starter.createSapper",
 		"onCommand:svelte-starter.runSvelte"
 	],
 	"main": "./extension.js",
@@ -39,6 +40,10 @@
 				{
 				"command": "svelte-starter.createSvelte",
 				"group": "SvelteGroup@1"
+		  },
+		  {
+			"command": "svelte-starter.createSapper",
+			"group": "SvelteGroup@1" 
 		  },
 		  {
 			"command": "svelte-starter.runSvelte",
