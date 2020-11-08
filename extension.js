@@ -86,6 +86,7 @@ function activate(context) {
 	context.subscriptions.push(createSvelte);
 	context.subscriptions.push(createSapper);
 	context.subscriptions.push(runSvelte);
+	context.subscriptions.push(buildSvelte);
 }
 exports.activate = activate;
 
