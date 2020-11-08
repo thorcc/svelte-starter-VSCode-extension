@@ -24,10 +24,6 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "svelte-starter.helloWorld",
-				"title": "Hello World"
-			},
-			{
 				"command": "svelte-starter.runSvelte",
 				"title": "run svelte"
 			},
