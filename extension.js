@@ -42,6 +42,18 @@ function activate(context) {
 		terminal.sendText("npm run dev");
 	});
 
+	let createVGS = vscode.commands.registerCommand('svelte-starter.createVGS', function (uri) {
+		// The code you place here will be executed every time your command is executed
+
+		// Display a message box to the user
+		const terminal = vscode.window.createTerminal("svelte-terminal");
+		terminal.show();
+		terminal.sendText(`cd "${uri.fsPath}"`);
+		terminal.sendText(`npx degit "https://github.com/thorcc/sapper-vgs/" .`);
+		terminal.sendText("npm install");
+		terminal.sendText("npm run dev");
+	});
+
 	let runSvelte = vscode.commands.registerCommand('svelte-starter.runSvelte', function (uri) {
 		// The code you place here will be executed every time your command is executed
 
@@ -85,6 +97,7 @@ function activate(context) {
 
 	context.subscriptions.push(createSvelte);
 	context.subscriptions.push(createSapper);
+	context.subscriptions.push(createVGS);
 	context.subscriptions.push(runSvelte);
 	context.subscriptions.push(buildSvelte);
 }
