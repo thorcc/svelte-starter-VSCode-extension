@@ -36,7 +36,7 @@ function activate(context) {
 		vscode.window.showInformationMessage('Svelte starting');
 		const terminal = vscode.window.createTerminal("svelte-terminal");
 		terminal.show();
-		terminal.sendText(`cd ${uri.fsPath}`);
+		terminal.sendText(`cd "${uri.fsPath}"`);
 		terminal.sendText("npx degit sveltejs/sapper-template#rollup .");
 		terminal.sendText("npm install");
 		terminal.sendText("npm run dev");
