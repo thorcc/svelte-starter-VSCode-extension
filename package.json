@@ -61,6 +61,10 @@
 					"group": "SvelteGroup@1"
 				},
 				{
+					"command": "svelte-starter.createVGSwebpack",
+					"group": "SvelteGroup@1"
+				},
+				{
 					"command": "svelte-starter.runSvelte",
 					"group": "SvelteGroup@1"
 				},
