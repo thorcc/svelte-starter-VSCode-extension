@@ -1,20 +1,36 @@
-# sapper-vgs-webpack
+# Svelte-starter
 
-En sapper-template for oppgaver og prøver.
+Extension for running svelte from the explorer menu.
 
-## Opprette prosjekt
+<p>
+  <img src="https://raw.githubusercontent.com/thorcc/svelte-starter-VSCode-extension/main/image.png" alt="logo" width="300">
+</p>
 
-```bash
-npx degit "https://github.com/thorcc/sapper-vgs-webpack" prosjektnavn
+## Requirements
+
+- [Node.js](https://nodejs.org/en/)
+- Git
+  - [Git (mac)](https://sourceforge.net/projects/git-osx-installer/)
+  - [Git (windows)](https://git-scm.com/download/windows)
+
+> Restart VS Code after installing node and git.
+
+## create svelte
 ```
-
-## Kjøre prosjekt
-
-```bash
-cd prosjektnavn
+npx degit sveltejs/template .
 npm install
 npm run dev
 ```
 
-Dette vil starte en liveserver for prosjektet på [localhost:3000](http://localhost:3000).
-Kode skrives i oppgave-filene (src/routes/).
+## run svelte
+```
+npm run dev
+```
+
+## build svelte
+
+```
+npm build
+```
+
+This function also adds a `./` to paths in index.html, enabling the app to run directly from `index.html` with out a webserver.
